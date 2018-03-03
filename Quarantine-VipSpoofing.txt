@@ -1,0 +1,31 @@
+== SWIFTFILTER HEADER - BEGIN ===
+
+Name: Quaratine VIP Spoofing
+Description: Highly reliable approach to VIP imitation, see other rules for more
+
+Rules:
+- the sender is outside the organization
+- message header FROM matches text patterns: <SET0>
+
+Exceptions:
+- if sender's address includes:
+--- facebook
+
+- if sender's domain is:
+--- docusign.net
+--- quarantine.messaging.microsoft.com
+
+Actions:
+- Deliver to quarantine
+- Send an incident report to monitoring mailbox
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <CUSTOMIZED REGULAR EXPRESSIONS> ==
+
+Set NAME1 = Your CEO's first name
+Set NAME2 = Your CEO's last name
+
+NAME1.*NAME2
+
+== SET0 - END <CUSTOMIZED REGULAR EXPRESSIONS> ==

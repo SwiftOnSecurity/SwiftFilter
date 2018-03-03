@@ -1,0 +1,15 @@
+== SWIFTFILTER HEADER - BEGIN ==
+
+Name: RejectNoReply-Stage2
+Description: Clean up automated messages ignored by the catch filter in Stage1
+
+Rules:
+- The sender is outside the organization
+- The recipient is: noreply@company.com
+
+Actions:
+- Delete without notifying anyone
+
+Position: After Stage1
+
+== SWIFTFILTER HEADER - END ==

@@ -1,0 +1,57 @@
+== SWIFTFILTER HEADER - BEGIN ==
+
+Name: RejectNoReply-Stage1
+Description: When phishers take over other business email accounts, they send messages to all senders in the user's inbox, 
+	to try to compromise known associates. We want to find non-automated replies to isolate these high-quality phishing
+	messages for threat intelligence. Often customers will work with multiple employees, so it's also a detective control.
+	The 2nd stage of this rule (see the other file) will delete the message without creating a reply loop.
+
+Rules:
+- The sender is outside the organization
+- The recipient is: noreply@company.com
+
+Exceptions:
+- sender's address matches text patterns: <SET0>
+- subject inlcudes words: <SET1>
+
+Actions:
+- Reject with message: This no-reply mailbox does not accept external email. Please contact us directly.
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <TEXT> ==
+
+<YOUR COMPANY NAME>
+daemon
+mailer
+postmaster
+
+== SET0 - END <TEXT> ==
+
+== SET1 - BEGIN <TEXT> ==
+
+absence
+accuse de reception
+address verification
+auto reply
+auto response
+auto:
+automaattinen
+automatic reply
+automatique
+automatisch
+automatisk svar
+autoreply
+autoresponse
+autosvar
+avis d'expédition
+delivery failure
+message delivery delay
+on holiday
+out of office
+out of the office
+received your email
+returned mail
+undelivered mail returned
+
+== SET1 - END <TEXT> ==

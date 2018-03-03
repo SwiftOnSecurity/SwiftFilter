@@ -1,0 +1,81 @@
+== SWIFTFILTER HEADER - BEGIN ===
+
+Name: Warn and Audit high-risk domains
+Description: Alert on links to abusive hosts and abused TLDs
+
+Rules:
+- the sender is outside the organization
+- subject or body matches text patterns: <SET0>
+
+Exceptions:
+- the subject or body matches text patterns: This email originated from outside of the organization
+
+Actions:
+- Prepend the disclaimer: <SET1>
+- Send an incident report to monitoring mailbox
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <REGULAR EXPRESSIONS> ==
+
+sendspace\.com
+://soo\.gd/
+://cuu\.su/
+://www\.b00\.fr/
+://ssh\.tf/
+://vzt\.me/
+\.yolasite\.com
+://snip\.ly/
+://lc\.cx/
+://urly\.fi/
+://i-to\.cc/
+://pxlme\.me/
+://bit\.do/
+://smarturl\.it/
+://s\.id/
+webredirect\.org
+://flyt\.it/
+\.pl.ua
+://tny\.im/
+\.16mb\.com
+\.ulcraft\.com
+topstyle\.me
+\.skclick\.in
+://tiny\.cc/
+://hubn\.jp
+://spbver\.de
+\.appzoneteam\.com
+://wurl\.cc
+\.5gbfree\.com
+://x\.co/
+hyperurl\.co
+sites\.google\.com
+\.website2\.me
+\w\.xyz/
+\.webhostbox\.net
+\.inmotionhosting\.com
+\.free\.fr/
+godaddysites\.com
+jotformeu\.com
+\.c9users\.io
+url\.fit/
+\.your-server\.de
+/u\.to/
+\.ukit\.me
+form2pay\.com
+\.cl/
+\.uz/
+myfreesites\.net
+\.tripod\.com
+contabo\.net
+is\.gd/
+\.weebly\.com
+\.joburg
+
+== SET0 - END <REGULAR EXPRESSIONS> ==
+
+== SET1 - BEGIN <TEXT> ==
+
+<div style="background-color:#FFEB9C; width:100%; border-style: solid; border-color:#9C6500; border-width:1pt; padding:2pt; font-size:10pt; line-height:12pt; font-family:'Calibri'; color:Black; text-align: left;"><span style="color:#9C6500; font-weight:bold;">CAUTION:</span> This email originated from outside of the organization and contains <b>potentially dangerous</b> website links. Please use caution before clicking any links or following instructions below. Do not sign-in with your corporate account. Please contact IT Helpdesk if in doubt.</div><br>
+
+== SET0 - END <TEXT> ==

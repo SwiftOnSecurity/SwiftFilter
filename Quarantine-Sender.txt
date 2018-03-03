@@ -1,0 +1,31 @@
+== SWIFTFILTER HEADER - BEGIN ==
+
+Name: QuaratineSpam-Sender
+Description: Virtually no false-positives, but quickly goes out of date
+
+Rules:
+- Sender address matches these text patterns: <SET0>
+
+Exceptions:
+- if sender's domain is quarantine.messaging.microsoft.com
+
+Actions:
+- Deliver to quarantine
+- Send an incident report to monitoring mailbox
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <REGULAR EXPRESSIONS> ==
+
+@dse\.com
+docusigns
+docusign\-
+dropsign\.net
+efax@
+ffax.com
+mail365
+vmservice@
+VoiceMessage@
+\.ssl\.com$
+
+== SET0 - END <REGULAR EXPRESSIONS> ==

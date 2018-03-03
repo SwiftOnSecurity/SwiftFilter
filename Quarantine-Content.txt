@@ -1,0 +1,51 @@
+== SWIFTFILTER HEADER - BEGIN ==
+
+Name: QuaratineSpam-Content
+Description: Virtually no false-positives, but quickly goes out of date
+
+Rules:
+- Subject or body matches text patterns: <SET0>
+
+Exceptions:
+- if sender's domain is quaratine.messaging.microsoft.com
+
+Actions:
+- Deliver to quarantine
+- Send an incident report to monitoring mailbox
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <REGULAR EXPRESSIONS> ==
+
+ view click here
+//bitly\.im/
+/invoice-due-
+/New-invoice-
+a Secured File with you
+Antivirus.Status:\s*Clean
+but there was nobody who could sign
+clustered messages
+Download.\|.View
+dropbox file sent
+File scanned by Avast antivirus
+how to resolve your email
+invoice.?#.?[0-9]{3,}\.doc
+MOVE.MESSAGE.TO.IN.?BOX
+new\W*documents\W*was\W*sent\W*to\W*you 
+no emails reply: no emails
+one drive team
+Our courier attempted
+Purchase Order for your kind reference
+Scan result: Clean
+secured? files link
+shared a private document
+shared?.a.secure.file
+to share some document 
+used docu.?box to
+View Invoice in DOCx?\W
+will be deleted in few hours
+You have new documents sent to you via
+\.com/\?[0-9]+\=
+\|\s*Download.as.Excel
+
+== SET0 - END <REGULAR EXPRESSIONS> ==

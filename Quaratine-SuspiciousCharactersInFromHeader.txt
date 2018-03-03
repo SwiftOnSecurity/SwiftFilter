@@ -1,0 +1,34 @@
+== SWIFTFILTER HEADER - BEGIN ==
+
+Name: Quaratine-Suspicious characters in From header
+Description: Shunt red-flag unicode characters rarely used legitimately
+
+Rules:
+- The sender is outside the organization
+- The FROM header matches text patterns: <SET0>
+
+Exceptions:
+- sender's address matches text patterns: <SET1>
+
+Actions:
+- Quarantine the message
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <TEXT> ==
+
+'เ
+Å
+Ḕ
+ṝ
+ō
+x̣
+Ď'
+
+== SET0 - END <TEXT> ==
+
+== SET1 - BEGIN <TEXT> ==
+
+\.dk$
+
+== SET1 - END <TEXT> ==

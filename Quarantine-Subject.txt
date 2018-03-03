@@ -1,0 +1,50 @@
+== SWIFTFILTER HEADER - BEGIN ==
+
+Name: QuaratineSpam-Subject
+Description: Virtually no false-positives, but quickly goes out of date
+
+Rules:
+- Subject includes any of these words: <SET0>
+
+Exceptions:
+- if sender's address includes:
+--- facebook
+
+- if sender's domain is:
+--- docusign.net
+--- quarantine.messaging.microsoft.com
+
+Actions:
+- Deliver to quarantine
+- Send an incident report to monitoring mailbox
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <TEXT> ==
+
+- name unavailable
+.com Document is Ready for Signature
+account Has Been Limited
+ACTION REQUIRED: Completed: Docusign
+Attached File to Docusign
+Banking is temporarily unavailable
+bankofamerica
+Closing Statement Invoice Payment For PO
+Delivery stopped for shipment
+detected suspicious
+detected suspicious actvity
+docu sign
+document for you
+document has been sent to you via Docusign
+FreeFax
+Fwd: Due invoice paid
+REQUIRED: Completed Docusign
+RingCentral
+secured files
+secured pdf
+Unrecognized login attempt,
+You have notifications pending
+Your document Settlement
+Your password has been compromised
+
+== SET0 - END <TEXT> ==

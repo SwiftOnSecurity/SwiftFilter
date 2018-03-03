@@ -1,0 +1,160 @@
+== SWIFTFILTER HEADER - BEGIN ===
+
+Name: Warn and Audit high-risk phishing patterns - Subject
+Description: Often-malicious email subjects. Requires a large amount of testing before using!
+
+Rules:
+- the sender is outside the organization
+- subject or body matches text patterns: <SET0>
+
+Exceptions:
+- the recipient is: (probably your legal department)
+- the sender's domain is: <SET1>
+
+Actions:
+- Prepend the disclaimer: <SET2>
+- Send an incident report to monitoring mailbox
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <REGULAR EXPRESSIONS> ==
+
+ scam
+(?<!lease )termination.*notice
+3 6 5
+:completed
+abandon.*package
+about.your.account
+acc(ou)?n?t (is )?on ho[li]d
+acc(ou)?n?t.*terminat
+acc(oun)?t.*[il1]{2,}mitation
+access.*limitation
+account (will be )?block
+account.*de-?activat
+account.*locked
+account.*re-verification
+account.*Security
+account.*suspension
+account.has.been
+account.has.expired
+account.will.be.blocked
+account\ V[il]o[li]at
+activity.*acc(oun)?t
+almost.full
+app[li]e.[il]d
+authenticate.*account
+been.*suspend
+Clos.*Of.*Account.*processed
+confirm.your.account
+courier.*able
+Delivery.*Attempt.*Failed
+document.received
+documented.*shared.*with.*you
+dropbox.*document
+e-?ma[il1]+ .{0,10}suspen
+e-?ma[il1]{1,} user
+e-?ma[il1]{2,} acc
+e-?ma[il1]{2,}.*up.?grade
+e.?ma[il1]{2,}.*server
+e.?ma[il1]{2,}.*suspend
+email.update
+faxed you
+fraud(ulent)?.*charge
+from.helpdesk
+fu[il1]{2,}.*ma[il1]+[ -]?box
+has.been.*suspended
+has.been.limited
+have.locked
+heipdesk
+he[li]p ?Desk Upgrade
+ii[il]ega[il]
+incoming e?mail
+incoming.*Fax
+i[il]iega[il]
+lock.*security
+mail on.?hold
+mail.*box.*Migration
+mail.*de-?activat
+mail.update.required
+mails.pending
+ma[il1]{1,}[ -]?box.*quo
+ma[il1]{2,}box.*[il1]{2,}mit
+Ma[il1]{2,}box\ Stor
+ma[il1]{2,}[ -]?box.*fu[il1]
+missed.*shipping.*notification
+Missed.shipment.notification
+Must.Update.Your.Account
+new voice ?-?mail
+new [sl][io]g?[nig][ -]?in from
+notifications?.pending
+office.*3.*6.*5.*suspend
+office365
+online doc
+on\ google\ docs\ with\ you
+password.*compromised
+Periodic Maintenance
+potential(ly)? unauthorized
+refund not approved
+scanned.?invoice
+secured?.update
+security breach
+securlty
+Signed.*delivery
+status of your .{3,14}? ?delivery
+suspicious.*sign.*[io]n
+Suspicious.Activit
+Susp[il1]+c[il1]+ous.*Act[il1]+v[il1]+ty
+temporar(il)?y deactivate
+temporarily.*lock
+temporar[il1]{2,}y disab[li]ed
+un-?usua[li].activity
+unable.*deliver
+unauthorized.*activit
+unauthorized.device
+undelivered message
+unread.*doc
+unusual.activity
+upgrade.*account
+UPGRADE.NOTICE
+urgent message
+urgent.verification
+va[il1]{1,}date.*ma[il1]{2,}[ -]?box
+verification ?-?require
+verification( )?-?need
+verify.your?.account
+v[il1]o[li1]at[il1]on security
+web ?-?ma[il1]{2,}
+web[ -]?ma[il1]{2,}
+Will.Be.Suspended
+your (customer )?account .as
+Your.Office.365
+your.online.access
+[il1]{2,}mit.*ma[il1]{2,} ?bo?x
+[il][il][il]egai[ -]
+[li][li][li]ega[li] Attempt
+[ng]-?[io]n .*block
+[ng]-?[io]n .*cancel
+[ng]-?[io]n .*deactiv
+[ng]-?[io]n .*disabl
+\Aaction.*required\z
+\bhoid\b
+\bITS \s
+
+== SET0 - END <REGULAR EXPRESSIONS> ==
+
+== SET1 - BEGIN <TEXT> ==
+
+notify.wellsfargo.com
+citibank.com
+id.apple.com
+salesforce.com
+apple.com
+email.apple.com
+
+== SET1 - END <TEXT> ==
+
+== SET2 - BEGIN <TEXT> ==
+
+<div style="background-color:#FFEB9C; width:100%; border-style: solid; border-color:#9C6500; border-width:1pt; padding:2pt; font-size:10pt; line-height:12pt; font-family:'Calibri'; color:Black; text-align: left;"><span style="color:#9C6500; font-weight:bold;">CAUTION:</span> This email originated from outside of the organization and has a suspicious email subject. Please use caution before clicking any links or following instructions below. Do not sign-in with your corporate account. Contact IT Helpdesk if in doubt.</div><br>
+
+== SET2 - END <TEXT> ==
