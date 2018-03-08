@@ -1,4 +1,4 @@
-== SWIFTFILTER HEADER - BEGIN ==
+﻿== SWIFTFILTER HEADER - BEGIN ==
 
 Name: Quaratine-Suspicious characters in From header
 Description: Shunt red-flag unicode characters rarely used legitimately

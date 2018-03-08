@@ -1,4 +1,4 @@
-== SWIFTFILTER HEADER - BEGIN ==
+﻿== SWIFTFILTER HEADER - BEGIN ==
 
 Name: RejectNoReply-Stage1
 Description: When phishers take over other business email accounts, they send messages to all senders in the user's inbox, 

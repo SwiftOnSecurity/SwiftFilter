@@ -1,0 +1,33 @@
+﻿== SWIFTFILTER HEADER - BEGIN ===
+
+Name: Warn and Audit high-risk phishing patterns
+Description: Phishing patterns in email body
+
+Rules:
+- the sender is outside the organization
+- subject or body matches text patterns: <SET0>
+
+Actions:
+- Prepend the disclaimer: <SET1>
+- Send an incident report to monitoring mailbox
+
+== SWIFTFILTER HEADER - END ==
+
+== SET0 - BEGIN <REGULAR EXPRESSIONS> ==
+
+
+you have \d+ [upw]
+\.[pxd][dlo][fsc]x?\W*\d{2,3}\.\d\W*[kmg]b
+blocked messages
+Download Documents
+>View Documents<
+>Download<
+>Access<
+
+== SET0 - END <REGULAR EXPRESSIONS> ==
+
+== SET1 - BEGIN <TEXT> ==
+
+<div style="background-color:#FFEB9C; width:100%; border-style: solid; border-color:#9C6500; border-width:1pt; padding:2pt; font-size:10pt; line-height:12pt; font-family:'Calibri'; color:Black; text-align: left;"><span style="color:#9C6500; font-weight:bold;">CAUTION:</span> This email originated from outside of the organization and has a suspicious email subject. Please use caution before clicking any links or following instructions below. Do not sign-in with your corporate account. Contact IT Helpdesk if in doubt.</div><br>
+
+== SET1 - END <TEXT> ==

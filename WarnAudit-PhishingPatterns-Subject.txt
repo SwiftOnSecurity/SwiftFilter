@@ -1,4 +1,4 @@
-== SWIFTFILTER HEADER - BEGIN ===
+﻿== SWIFTFILTER HEADER - BEGIN ===
 
 Name: Warn and Audit high-risk phishing patterns - Subject
 Description: Often-malicious email subjects. Requires a large amount of testing before using!

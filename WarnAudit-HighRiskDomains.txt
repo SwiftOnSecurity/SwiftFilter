@@ -1,4 +1,4 @@
-== SWIFTFILTER HEADER - BEGIN ===
+﻿== SWIFTFILTER HEADER - BEGIN ===
 
 Name: Warn and Audit high-risk domains
 Description: Alert on links to abusive hosts and abused TLDs

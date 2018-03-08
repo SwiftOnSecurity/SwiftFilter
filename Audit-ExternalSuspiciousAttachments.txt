@@ -1,4 +1,4 @@
-== SWIFTFILTER HEADER - BEGIN ===
+﻿== SWIFTFILTER HEADER - BEGIN ===
 
 Name: Audit external malicious attachments
 Description: Get copied on weird file formats that might be dangerous

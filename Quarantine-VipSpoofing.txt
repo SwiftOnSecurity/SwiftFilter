@@ -1,4 +1,4 @@
-== SWIFTFILTER HEADER - BEGIN ===
+﻿== SWIFTFILTER HEADER - BEGIN ===
 
 Name: Quaratine VIP Spoofing
 Description: Highly reliable approach to VIP imitation, see other rules for more

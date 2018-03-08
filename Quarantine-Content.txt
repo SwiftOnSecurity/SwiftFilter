@@ -1,4 +1,4 @@
-== SWIFTFILTER HEADER - BEGIN ==
+﻿== SWIFTFILTER HEADER - BEGIN ==
 
 Name: QuaratineSpam-Content
 Description: Virtually no false-positives, but quickly goes out of date
