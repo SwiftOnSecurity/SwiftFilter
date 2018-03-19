@@ -16,7 +16,7 @@ Actions:
 == SET0 - BEGIN <REGULAR EXPRESSIONS> ==
 
 you have \d+ [upw]
-\.[pxd][dlo][fsc]x?\W*\d{2,3}\.\d\W*[kmg]b
+\.[pxd][dlo][fsc]x?\W*\d{1,3}\.\d+\W*[kmg]b
 blocked messages
 Download Documents
 >View Documents<
